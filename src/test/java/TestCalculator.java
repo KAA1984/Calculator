@@ -58,7 +58,7 @@ class TestCalculator {
         int first = 8;
         int second = 3;
         String operation = "-";
-        String expectedResult = "5,00";
+        String expectedResult = "5.00";
 
         //WHEN
         String actualResult = calculator.calculate(first, second, operation);
@@ -73,7 +73,7 @@ class TestCalculator {
         int first = 4;
         int second = 3;
         String operation = "/";
-        String expectedResult = "1,33";
+        String expectedResult = "1.33";
 
         //WHEN
         String actualResult = calculator.calculate(first, second, operation);
@@ -92,10 +92,10 @@ class TestCalculator {
 
     private static Stream<Arguments> allOperations() { //provideValidData()
         return Stream.of(
-                Arguments.of(2,2, "*", "4,00"),
-                Arguments.of(2,2,"/","1,00"),
-                Arguments.of(2,4,"+","6,00"),
-                Arguments.of(2,3,"-","-1,00")
+                Arguments.of(2,2, "*", "4.00"),
+                Arguments.of(2,2,"/","1.00"),
+                Arguments.of(2,4,"+","6.00"),
+                Arguments.of(2,3,"-","-1.00")
         );
     }
 }

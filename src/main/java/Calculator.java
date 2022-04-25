@@ -1,5 +1,7 @@
 import java.text.DecimalFormat;
+import java.text.DecimalFormatSymbols;
 import java.util.InputMismatchException;
+import java.util.Locale;
 
 public class Calculator {
 
@@ -7,12 +9,10 @@ public class Calculator {
 
     public String calculate(int first, int second , String operation) {
 
-        //String result = String.valueOf(calculationStep(first, second,operation));
+        double result = calculationStep(first, second, operation);
 
-        //return String.valueOf(result);
-        double result = calculationStep(first, second,operation);
+        return (new DecimalFormat("#0.00", new DecimalFormatSymbols(Locale.ENGLISH))).format(result);
 
-        return new DecimalFormat("#,##0.00").format(result);
     }
 
     public double calculationStep(int first, int second, String operation) throws InputMismatchException {
